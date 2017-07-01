@@ -1,9 +1,13 @@
 %多次高斯迭代后的结果；
 x=-4:0.01:4;
+N=801;
 y(1,:)=normpdf(x,0,0.4);
 plot(x,y);
-for i=2:100
+for i=100:1000
 	hold on;
-	y(i,:)=y(i-1,:).*normpdf(x,0,0.4);
+	y(i,:)=0;
+	for j=x %遍历
+		y(i,:)=y(i,:)+y(i-1,:).*normpdf(x+j,j,0.4)/N;
+	end
 	plot(x,y(i,:));
 end
