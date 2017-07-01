@@ -1,0 +1,9 @@
+%多次高斯迭代后的结果；
+x=-4:0.01:4;
+y(1,:)=normpdf(x,0,0.4);
+plot(x,y);
+for i=2:100
+	hold on;
+	y(i,:)=y(i-1,:).*normpdf(x,0,0.4);
+	plot(x,y(i,:));
+end
