@@ -1,2 +1,3 @@
 # MobileComputing_FinalProject
-use SGV method to compute with android phone, java, python, matlab
+use SGV method to compute with android phone.
+Using java, python, matlab codes.
